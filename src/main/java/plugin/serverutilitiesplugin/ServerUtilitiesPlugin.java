@@ -8,7 +8,7 @@ import plugin.serverutilitiesplugin.Events.*;
 
 public final class ServerUtilitiesPlugin extends JavaPlugin {
 
-    public void onCommandRegister() {
+    public void commandRegister() {
         PluginCommand pluginCommand = Bukkit.getPluginCommand("serverutils");
         if (pluginCommand == null) return;
         pluginCommand.setExecutor(new ServerUtils(this));
@@ -17,8 +17,8 @@ public final class ServerUtilitiesPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        onCommandRegister();
-        Bukkit.getPluginManager().registerEvents(new CreeperExplode(),this);
+        commandRegister();
+        Bukkit.getPluginManager().registerEvents(new CreeperExplode(this),this);
         Bukkit.getPluginManager().registerEvents(new FarmProtect(this),this);
         Bukkit.getPluginManager().registerEvents(new PlayerSleep(this),this);
         Bukkit.getPluginManager().registerEvents(new PortalEntry(this),this);
