@@ -1,0 +1,7 @@
+name: ServerUtilitiesPlugin
+version: '${project.version}'
+main: plugin.serverutilitiesplugin.ServerUtilitiesPlugin
+api-version: '1.20'
+commands:
+  serverutils:
+    permission: op

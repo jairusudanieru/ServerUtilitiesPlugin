@@ -1,0 +1,19 @@
+# messages:
+#  sleepMessage: = the message when someone sleeps at night
+#  netherDisabled: = the message when a player enters a nether portal when it's disabled
+#  endDisabled: = the message when a player enters an end portal when it's disabled
+messages:
+  sleepMessage: "&6%player% &ewent to sleep"
+  netherDisabled: "&cNether is currently disabled"
+  endDisabled: "&cEnd is currently disabled"
+  reloadMessage: "&bConfiguration successfully reloaded"
+
+# enabled:
+#  world_nether: = whether to enable or disable the nether dimension.
+#  world_the_end: = whether to enable or disable the end dimension.
+#  noDryFarmland: = whether to enable or disable the farmland drying. If you change this to
+#                     true from false, the existing farmlands with crops will remain dry.
+config:
+  world_nether: true
+  world_the_end: true
+  noDryFarmland: true
