@@ -1,7 +1,17 @@
+# [ServerUtilitiesPlugin] - A very simple plugin to add some modifications
+# to your Minecraft server. If you have any issues, please contact me on
+# Discord or create a new issue on this plugin's repository.
+
+# Plugin Creator: Jairusu
+# Discord Username: @jairusu
+# Github: https://github.com/jairusudanieru
+
 # messages:
-#  sleepMessage: = the message when someone sleeps at night
-#  netherDisabled: = the message when a player enters a nether portal when it's disabled
-#  endDisabled: = the message when a player enters an end portal when it's disabled
+#  sleepMessage: = The message when someone sleeps at night.
+#  netherDisabled: = The message when a player enters a nether portal when it's disabled.
+#  endDisabled: = The message when a player enters an end portal when it's disabled.
+# You can use the placeholder "&" for color codes, and only netherDisabled, endDisabled and
+#  sleepMessage have the placeholder "%player%" for the player username.
 messages:
   netherDisabled: "&cNether is currently disabled"
   endDisabled: "&cEnd is currently disabled"
@@ -9,12 +19,15 @@ messages:
   reloadMessage: "&bConfiguration successfully reloaded"
 
 # enabled:
-#  world_nether: = whether to enable or disable the nether dimension.
-#  world_the_end: = whether to enable or disable the end dimension.
-#  noDryFarmland: = whether to enable or disable the farmland drying. If you change this to
-#                     true from false, the existing farmlands with crops will remain dry.
+#  world_nether: = Whether to enable or disable the Nether dimension.
+#  world_the_end: = Whether to enable or disable the End dimension.
+#  noDryFarmland: = Whether to enable or disable the farmland drying and trampling. If you
+#   change this from false to true, the existing farmland with crops will remain dry.
 config:
   creeperGriefing: false
   noDryFarmland: true
+  onePlayerSleep: true
   world_nether: true
   world_the_end: true
+
+# To save the changes while the server is still online, please use the reload command.

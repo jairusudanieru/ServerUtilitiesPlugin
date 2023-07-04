@@ -17,6 +17,8 @@ public class PlayerSleep implements Listener {
 
     @EventHandler
     public void onPlayerSleep(PlayerDeepSleepEvent event) {
+        boolean onePlayerSleep = plugin.getConfig().getBoolean("config.onePlayerSleep");
+        if (!onePlayerSleep) return;
         Player player = event.getPlayer();
         String playerName = player.getName();
         boolean isDayTime = player.getWorld().isDayTime();
