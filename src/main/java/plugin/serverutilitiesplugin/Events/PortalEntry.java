@@ -44,8 +44,8 @@ public class PortalEntry implements Listener {
 
     @EventHandler
     public void onEndPortalEntry(PlayerPortalEvent event) {
-        boolean netherEnabled = plugin.getConfig().getBoolean("config.world_the_end");
-        if (netherEnabled) return;
+        boolean endEnabled = plugin.getConfig().getBoolean("config.world_the_end");
+        if (endEnabled) return;
         Player player = event.getPlayer();
         String playerName = player.getName();
 
@@ -78,8 +78,8 @@ public class PortalEntry implements Listener {
 
     @EventHandler
     public void onEndPortalActivate(PlayerInteractEvent event) {
-        boolean netherEnabled = plugin.getConfig().getBoolean("enabled.world_the_end");
-        if (netherEnabled) return;
+        boolean endEnabled = plugin.getConfig().getBoolean("config.world_the_end");
+        if (endEnabled) return;
         Player player = event.getPlayer();
         String playerName = player.getName();
 

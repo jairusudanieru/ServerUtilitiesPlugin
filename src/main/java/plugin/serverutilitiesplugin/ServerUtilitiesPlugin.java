@@ -22,12 +22,12 @@ public final class ServerUtilitiesPlugin extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new FarmProtect(this),this);
         Bukkit.getPluginManager().registerEvents(new PlayerSleep(this),this);
         Bukkit.getPluginManager().registerEvents(new PortalEntry(this),this);
-        Bukkit.getLogger().info("Server Utilities successfully Enabled!");
+        Bukkit.getLogger().info("[ServerUtilitiesPlugin] Plugin Successfully Enabled!");
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info("Server Utilities successfully Disabled!");
+        Bukkit.getLogger().info("[ServerUtilitiesPlugin] Plugin Successfully Disabled!");
     }
 
 }
