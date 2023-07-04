@@ -30,12 +30,12 @@ public class PlayerSleep implements Listener {
         if (anyOtherPlayerSleeping) return;
 
         String message = plugin.getConfig().getString("messages.sleepMessage");
-        if (message == null) return;
-        message = message.replace("%player%",playerName).replace("&","§");
+        if (message != null) message = message.replace("%player%",playerName).replace("&","§");
 
         if (isDayTime && !isThundering || !isSleeping) return;
         player.getWorld().setTime(1000);
         for (Player onlinePlayers : Bukkit.getOnlinePlayers()) {
+            if (message == null) return;
             onlinePlayers.sendMessage(Component.text(message));
         }
     }

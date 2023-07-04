@@ -32,13 +32,12 @@ public class PortalEntry implements Listener {
         if (netherEnabled) return;
         Player player = event.getPlayer();
         String playerName = player.getName();
-
         String message = plugin.getConfig().getString("messages.netherDisabled");
-        if (message == null) return;
-        message = message.replace("%player%",playerName).replace("&","§");
+        if (message != null) message = message.replace("%player%",playerName).replace("&","§");
 
         if (event.getCause() != TeleportCause.NETHER_PORTAL) return;
         event.setCancelled(true);
+        if (message == null) return;
         player.sendMessage(Component.text(message));
     }
 
@@ -48,17 +47,14 @@ public class PortalEntry implements Listener {
         if (endEnabled) return;
         Player player = event.getPlayer();
         String playerName = player.getName();
-
         String message = plugin.getConfig().getString("messages.endDisabled");
-        if (message == null) return;
-        message = message.replace("%player%",playerName).replace("&","§");
+        if (message != null) message = message.replace("%player%",playerName).replace("&","§");
 
         Location worldSpawn = player.getWorld().getSpawnLocation();
         Location bedSpawn = player.getBedSpawnLocation();
-
+        String finalMessage = message;
         if (event.getCause() != TeleportCause.END_PORTAL) return;
         event.setCancelled(true);
-        String finalMessage = message;
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (bedSpawn != null) {
                 player.teleport(bedSpawn);
@@ -72,6 +68,7 @@ public class PortalEntry implements Listener {
                 if (currentTime - lastSentTime < cooldown) return;
             }
             messageCooldown.put(player, System.currentTimeMillis());
+            if (finalMessage == null) return;
             player.sendMessage(Component.text(finalMessage));
         }, 1);
     }
@@ -82,10 +79,8 @@ public class PortalEntry implements Listener {
         if (endEnabled) return;
         Player player = event.getPlayer();
         String playerName = player.getName();
-
-        String message = plugin.getConfig().getString("config.endDisabled");
-        if (message == null) return;
-        message = message.replace("%player%",playerName).replace("&","§");
+        String message = plugin.getConfig().getString("messages.endDisabled");
+        if (message != null) message = message.replace("%player%",playerName).replace("&","§");
 
         Action action = event.getAction();
         Block block = event.getClickedBlock();
@@ -96,6 +91,7 @@ public class PortalEntry implements Listener {
         Material holdingItem = itemStack.getType();
         if (clickedBlock == Material.END_PORTAL_FRAME && holdingItem == Material.ENDER_EYE) {
             event.setCancelled(true);
+            if (message == null) return;
             player.sendMessage(Component.text(message));
         }
     }
