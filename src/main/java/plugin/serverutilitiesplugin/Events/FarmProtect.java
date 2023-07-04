@@ -80,6 +80,7 @@ public class FarmProtect implements Listener {
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
                 BlockData blockData = block.getBlockData();
                 Farmland farmland = (Farmland) blockData;
+                if (blockAbove.getType() == Material.AIR) return;
                 farmland.setMoisture(7);
                 block.setBlockData(farmland);
             }, 1);
