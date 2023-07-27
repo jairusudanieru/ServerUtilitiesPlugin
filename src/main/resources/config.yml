@@ -18,16 +18,20 @@ messages:
   sleepMessage: "&6%player% &ewent to sleep"
   reloadMessage: "&bConfiguration successfully reloaded"
 
-# enabled:
+# config:
 #  world_nether: = Whether to enable or disable the Nether dimension.
 #  world_the_end: = Whether to enable or disable the End dimension.
+#  creeperGriefing: = Whether to enable or disable creepers destroying blocks.
+#  onePlayerSleep: = Whether to enable or disable one player sleep.
+#  playerSleepWarp: = Whether to enable or disable the smooth sky transition when sleeping.
 #  noDryFarmland: = Whether to enable or disable the farmland drying and trampling. If you
 #   change this from false to true, the existing farmland with crops will remain dry.
 config:
-  creeperGriefing: false
-  noDryFarmland: true
-  onePlayerSleep: true
   world_nether: true
   world_the_end: true
+  creeperGriefing: false
+  onePlayerSleep: true
+  playerSleepWarp: true
+  noDryFarmland: true
 
 # To save the changes while the server is still online, please use the reload command.
