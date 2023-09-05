@@ -10,6 +10,11 @@
 #  sleepMessage: = The message when someone sleeps at night.
 #  netherDisabled: = The message when a player enters a nether portal when it's disabled.
 #  endDisabled: = The message when a player enters an end portal when it's disabled.
+#  reloadMessage: = The message when an admin reloads the plugin.
+#  whisperUsage: = The command usage for the whisper command.
+#  playerNotFound: = The message when no player found.
+#  cantReply: = The message when the command user can't reply to a message.
+#  noReply: = The message when the command user have no one to reply to.
 # You can use the placeholder "&" for color codes, and only netherDisabled, endDisabled and
 #  sleepMessage have the placeholder "%player%" for the player username.
 messages:
@@ -17,11 +22,19 @@ messages:
   endDisabled: "&cEnd is currently disabled"
   sleepMessage: "&6%player% &ewent to sleep"
   reloadMessage: "&bConfiguration successfully reloaded"
+  whisperUsage: "&r/%s <player> <message>"
+  playerNotFound: "&cPlayer not found"
+  cantReply: "&cYou cant reply to this message"
+  noReply: "&cYou have no one to reply to"
+
+  # You can use the placeholder "%player%", "%target%" and "%message%"
+  senderMessage: "&7&oYou whisper to %target%: %message%"
+  targetMessage: "&7&o%sender% whispers to you: %message%"
 
 # config:
 #  world_nether: = Whether to enable or disable the Nether dimension.
 #  world_the_end: = Whether to enable or disable the End dimension.
-#  creeperGriefing: = Whether to enable or disable creepers destroying blocks.
+#  antiCreeperGrief: = Whether to enable or disable creepers destroying blocks.
 #  onePlayerSleep: = Whether to enable or disable one player sleep.
 #  playerSleepWarp: = Whether to enable or disable the smooth sky transition when sleeping.
 #  noDryFarmland: = Whether to enable or disable the farmland drying and trampling. If you
@@ -29,7 +42,7 @@ messages:
 config:
   world_nether: true
   world_the_end: true
-  creeperGriefing: false
+  antiCreeperGrief: true
   onePlayerSleep: true
   playerSleepWarp: true
   noDryFarmland: true

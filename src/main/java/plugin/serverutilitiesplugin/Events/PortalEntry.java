@@ -13,16 +13,16 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
+import plugin.serverutilitiesplugin.ServerUtilitiesPlugin;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class PortalEntry implements Listener {
 
-    private final JavaPlugin plugin;
+    private final ServerUtilitiesPlugin plugin;
     private final Map<Player, Long> messageCooldown = new HashMap<>();
-    public PortalEntry(JavaPlugin plugin) {
+    public PortalEntry(ServerUtilitiesPlugin plugin) {
         this.plugin = plugin;
     }
 

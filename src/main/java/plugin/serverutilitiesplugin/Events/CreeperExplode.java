@@ -4,19 +4,19 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
-import org.bukkit.plugin.java.JavaPlugin;
+import plugin.serverutilitiesplugin.ServerUtilitiesPlugin;
 
 public class CreeperExplode implements Listener {
 
-    private final JavaPlugin plugin;
-    public CreeperExplode(JavaPlugin plugin) {
+    private final ServerUtilitiesPlugin plugin;
+    public CreeperExplode(ServerUtilitiesPlugin plugin) {
         this.plugin = plugin;
     }
 
     @EventHandler
     public void onEntityExplode(EntityExplodeEvent event) {
-        boolean creeperGriefing = plugin.getConfig().getBoolean("config.creeperGriefing");
-        if (creeperGriefing) return;
+        boolean antiCreeperGrief = plugin.getConfig().getBoolean("config.antiCreeperGrief");
+        if (!antiCreeperGrief) return;
         EntityType entityType = event.getEntityType();
         if (entityType == EntityType.CREEPER) {
             event.setCancelled(true);

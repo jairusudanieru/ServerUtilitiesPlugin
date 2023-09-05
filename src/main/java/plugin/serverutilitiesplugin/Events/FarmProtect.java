@@ -13,15 +13,15 @@ import org.bukkit.event.block.MoistureChangeEvent;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
+import plugin.serverutilitiesplugin.ServerUtilitiesPlugin;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class FarmProtect implements Listener {
 
-    private final JavaPlugin plugin;
-    public FarmProtect(JavaPlugin plugin) {
+    private final ServerUtilitiesPlugin plugin;
+    public FarmProtect(ServerUtilitiesPlugin plugin) {
         this.plugin = plugin;
     }
 
