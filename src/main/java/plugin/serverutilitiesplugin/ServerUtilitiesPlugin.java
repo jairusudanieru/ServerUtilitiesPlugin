@@ -1,7 +1,7 @@
 package plugin.serverutilitiesplugin;
 
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
@@ -31,7 +31,7 @@ public final class ServerUtilitiesPlugin extends JavaPlugin {
         Team afkTeam = scoreboard.getTeam("afk");
         if (afkTeam == null) {
             Team team = scoreboard.registerNewTeam("afk");
-            team.setColor(ChatColor.GRAY);
+            team.color(NamedTextColor.GRAY);
             afkTeam = team;
         }
         for (String entry : afkTeam.getEntries()) {
