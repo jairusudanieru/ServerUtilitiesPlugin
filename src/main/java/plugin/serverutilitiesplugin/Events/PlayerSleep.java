@@ -29,10 +29,6 @@ public class PlayerSleep implements Listener {
         boolean isDayTime = player.getWorld().isDayTime();
         boolean isThundering = player.getWorld().isThundering();
         boolean isSleeping = player.isSleeping();
-        boolean anyOtherPlayerSleeping = Bukkit.getOnlinePlayers().stream()
-                .filter(otherPlayer -> !otherPlayer.equals(player))
-                .anyMatch(Player::isSleeping);
-        if (anyOtherPlayerSleeping) return;
         if (isDayTime && !isThundering || !isSleeping) return;
 
         String message = plugin.getConfig().getString("messages.sleepMessage");

@@ -7,20 +7,13 @@
 # Github: https://github.com/jairusudanieru
 
 # messages:
-#  sleepMessage: = The message when someone sleeps at night.
-#  netherDisabled: = The message when a player enters a nether portal when it's disabled.
-#  endDisabled: = The message when a player enters an end portal when it's disabled.
 #  reloadMessage: = The message when an admin reloads the plugin.
 #  whisperUsage: = The command usage for the whisper command.
 #  playerNotFound: = The message when no player found.
 #  cantReply: = The message when the command user can't reply to a message.
 #  noReply: = The message when the command user have no one to reply to.
-# You can use the placeholder "&" for color codes, and only netherDisabled, endDisabled and
-#  sleepMessage have the placeholder "%player%" for the player username.
+# You can use the placeholder "&" for color codes
 messages:
-  netherDisabled: "&cNether is currently disabled"
-  endDisabled: "&cEnd is currently disabled"
-  sleepMessage: "&6%player% &ewent to sleep"
   reloadMessage: "&bConfiguration successfully reloaded"
   whisperUsage: "&r/%s <player> <message>"
   playerNotFound: "&cPlayer not found"
@@ -31,6 +24,22 @@ messages:
   senderMessage: "&7&oYou whisper to %target%: %message%"
   targetMessage: "&7&o%sender% whispers to you: %message%"
 
+  # You can use the placeholder "%player%"
+  #  sleepMessage: = The message when someone sleeps at night.
+  #  netherDisabled: = The message when a player enters a nether portal when it's disabled.
+  #  endDisabled: = The message when a player enters an end portal when it's disabled.
+  #  announceIsAFK: = The broadcast message when a player becomes afk.
+  #  announceIsNotAFK: = The broadcast message when a player becomes afk.
+  #  playerIsAFK: = The message when a player becomes afk.
+  #  playerIsNotAFK: = The message when a player becomes not afk.
+  netherDisabled: "&cNether is currently disabled"
+  endDisabled: "&cEnd is currently disabled"
+  sleepMessage: "&6%player% &ewent to sleep"
+  announceIsAFK: "&7%player% is now AFK"
+  announceIsNotAFK: "&7%player% is no longer AFK"
+  playerIsAFK: "&7You are now AFK"
+  playerIsNotAFK: "&7You are no longer AFK"
+
 # config:
 #  world_nether: = Whether to enable or disable the Nether dimension.
 #  world_the_end: = Whether to enable or disable the End dimension.
@@ -39,6 +48,8 @@ messages:
 #  playerSleepWarp: = Whether to enable or disable the smooth sky transition when sleeping.
 #  noDryFarmland: = Whether to enable or disable the farmland drying and trampling. If you
 #   change this from false to true, the existing farmland with crops will remain dry.
+#  maxPlayers: = The max number of players that will be shown in the server list.
+#  afkTime: = The time, in seconds, that idle players will be counted as afk.
 config:
   world_nether: true
   world_the_end: true
@@ -46,5 +57,7 @@ config:
   onePlayerSleep: true
   playerSleepWarp: true
   noDryFarmland: true
+  maxPlayers: 100
+  afkTime: 300
 
 # To save the changes while the server is still online, please use the reload command.
